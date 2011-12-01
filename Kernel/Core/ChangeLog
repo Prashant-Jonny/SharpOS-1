@@ -1,0 +1,76 @@
+2008-02-12  William Lahti  <xfurious@gmail.com>
+	* Added NullReferenceException to korlib
+	* Added NullReferenceHandler to runtime
+	* Added testcase for null-checking in ldfld
+
+2008-02-11  William Lahti  <xfurious@gmail.com>
+	* Improved unhandled exception message to match .NET
+	* Added a number of exception types like the ArgumentException family,
+	NotSupportedException and NotImplementedException.
+	* Foundation/Time.cs: Time is now a class
+	* Foundation/ICalendar.cs: interface for calendars to support
+	* Foundation/CalendarManager.cs: handles instantiating and mapping
+	  calendars.
+	* Foundation/GregorianCalendar.cs: implements ICalendar
+	* Clock.cs: uses the new Time and Calendar changes.
+	* Diagnostics.cs: Panic now prints the error
+
+2008-01-15  William Lahti  <xfurious@gmail.com>
+	* Korlib/System/Char.cs: added
+	* Korlib/System/String.cs: testcases use Testcase.Test
+	* ADC/X86/Architecture.cs: removed RTC.Setup call
+	* ADC/X86/RTC.cs: changed Setup() to Read()
+	* ADC/X86/TextMode.cs: GetCursor/GetScreenSize use 'out' params
+	* ADC/RTC.cs: added, so RTC can be called from non-ADC
+	* ADC/FloppyDiskController.cs: removed System.Collections.Generic
+	  reference.
+	* ADC/TextMode.cs
+	  * cleaned up 'unsafe' keywords
+	  * added CursorTop and CursorLeft
+	* ASCII.cs: claimed authorship
+	* Clock.cs: a software clock that tracks seconds and nanoseconds.
+	* Foundation/CalendarType.cs: enumeration defines various calendars
+	* Foundation/CalendarType.cs: enumeration defines various calendars
+	* Foundation/Timestamp.cs: 64-bit CLI-compliant timestamp
+	* Foundation/Time.cs: generic type for holding a date/time.
+	* Foundation/Timezone.cs: handles timezone shifts
+	* Foundation/Testcase.cs: a new system for kernel testing
+	* Foundation/StringBuilder.cs: testcases use Testcase.Test
+	* Foundation/GregorianCalendar.cs: the first of many
+	* Foundation/PString8.cs: testcases use Testcase.Test
+	* Foundation/Convert.cs: added ToInt32()
+	* Foundation/CString8.cs: testcases use Testcase.Test
+	* Foundation/ByteString.cs: testcases use Testcase.Test
+	* Console.cs: make use of new GetCursor syntax
+	* Shell/Commands/BuiltIn/Timezone.cs: view/set timezone (buggy)
+	* Shell/Commands/BuiltIn/Testcase.cs: view testcases that have run
+	* Shell/Commands/BuiltIn/Time.cs: show system/hardware time
+	* Shell/Commands/BuiltIn/Snake.cs: uses new GetCursor() syntax
+	* EntryModule.cs: added Clock.Setup() call
+	* Diagnostics.cs: made assertion print message before panicking, so
+	  that if the panic fails, we can still see the message.
+
+2007-08-12  William Lahti  <xfurious@gmail.com>
+	* ADC/X86/TextMode.cs: moved WriteString to ADC/TextMode.cs
+	* ADC/TextMode.cs: removed WriteString ADC stub
+	* Pager.cs: moved to PageAllocator.cs
+	* PageAllocator.cs: changed comment style to fit in
+
+2007-08-02  William Lahti  <xfurious@gmail.com>
+	* CommandLine.cs: added code for generic handling of kernel command
+	line arguments.
+	* Keymap.cs: added support for compiling in binary keymaps and picking 
+	them on the fly (from the kernel command line).
+	* Foundation: folder for C library type code used in the kernel
+	* Foundation/ByteString.cs: utilities for dealing with ASCII string
+	pointers (byte*).
+	* KeyMaps: deleted this in favor of new keymap archive support
+	* Kernel.cs: updated to initialize CommandLine and KeyMap 
+
+2007-07-20  William Lahti  <xfurious@gmail.com>
+	* banished X86-specific code to the ADC layer mechanism
+	* merged in logicalerror's console code and TextMode class
+	* added memory management code to the kernel, got it to AOT properly.
+	The code is not yet active though.
+	* miscellaneous changes
+

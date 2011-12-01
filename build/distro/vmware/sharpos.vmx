@@ -1,0 +1,36 @@
+config.version = "8"
+virtualHW.version = "4"
+memsize = "256"
+floppy0.fileName = "./../common/SharpOS.img"
+sound.present = "TRUE"
+sound.virtualDev = "es1371"
+displayName = "SharpOS"
+guestOS = "other"
+nvram = "other.nvram"
+
+floppy0.fileType = "file"
+isolation.tools.dnd.disable = "TRUE"
+isolation.tools.hgfs.disable = "TRUE"
+workingDir = ""
+debug = "TRUE"
+monitor_control.log_vmsample = "TRUE"
+
+uuid.location = "56 4d 14 8a 91 8b be 9e-d3 81 37 87 d2 f8 a1 6e"
+uuid.bios = "56 4d 5a 8b 15 f8 34 34-18 7b 54 61 34 be f9 f3"
+
+serial0.present = "TRUE"
+serial0.fileType = "pipe"
+serial0.fileName = "\\.\pipe\sharpos-serial0"
+serial0.tryNoRxLoss = "TRUE"
+
+uuid.action = "keep"
+
+tools.remindInstall = "TRUE"
+
+floppy0.clientDevice = "FALSE"
+virtualHW.productCompatibility = "hosted"
+tools.upgrade.policy = "manual"
+
+checkpoint.vmState = "sharpos.vmss"
+
+extendedConfigFile = "sharpos.vmxf"
